@@ -9,6 +9,7 @@
     },
     "dependencies": {
         "express": "^4.16.1",
+        "forever": "0.14.1",
         "pm2": "5.3.0"
     }
 }
