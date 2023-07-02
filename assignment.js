@@ -13,5 +13,4 @@ app.get('/', (req, res) => {
 app.listen(PORT, HOST);
 
 console.log('Assignment service up and running on ' + 'http://${HOST}:${PORT}');
-
 console.log('Version 2 - latest');
