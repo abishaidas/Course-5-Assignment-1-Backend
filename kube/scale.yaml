@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: assignmentservice
+spec:
+  selector:
+    app: assignmentservice
+  ports:
+    - port: 35351
+      targetPort: 3031
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: assignmentservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels: 
+      app: assignmentservice
+  template:
+    metadata:
+      labels:
+        app: assignmentservice
+    spec:
+      containers:
+        - name: assignmentservice
+          image: abi20/assignmentservice:v2
+          ports:
+            - containerPort: 3031
+          resources:
+            limits:
+              cpu: "2"
+              memory: "1024Mi"
+            requests:
+              cpu: "0.01"
+              memory: "2Mi"
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: assignmentservice
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: assignmentservice
+  minReplicas: 2
+  maxReplicas: 4
+  targetCPUUtilizationPercentage: 60

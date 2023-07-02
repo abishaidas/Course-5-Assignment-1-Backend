@@ -1,0 +1,13 @@
+{
+    "name": "assignmentservice",
+    "version": "1.0.0",
+    "description": "Assignment service on docker",
+    "author": "Abishai",
+    "main": "assignment.js",
+    "scripts": {
+        "start": "node assignment.js"
+    },
+    "dependencies": {
+        "express": "^4.16.1"
+    }
+}
