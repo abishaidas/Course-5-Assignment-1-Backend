@@ -7,7 +7,7 @@ var HOST = '0.0.0.0';
 
 const app = express();
 app.get('/', (req, res) => {
-    res.send('This is part of assignment service response');
+    res.send('This is part of assignment service response.');
 });
 
 app.listen(PORT, HOST);
