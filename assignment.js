@@ -2,8 +2,8 @@
 
 const express = require('express');
 
-var PORT = 3031
-var HOST = '0.0.0.0';
+const PORT = 3031
+const HOST = '0.0.0.0';
 
 const app = express();
 app.get('/', (req, res) => {
