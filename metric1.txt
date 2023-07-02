@@ -1,0 +1,2 @@
+NAME                REFERENCE                      TARGETS         MINPODS   MAXPODS   REPLICAS   AGE
+assignmentservice   Deployment/assignmentservice   <unknown>/60%   2         4         2          16h
